@@ -1,5 +1,4 @@
 using CisReg_Website.Domain;
-using CisReg_Website.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,7 +11,6 @@ builder.Services.AddAntiforgery(options =>
 });
 
 builder.Services.AddDbContext<ApplicationDbContext>();
-builder.Services.AddScoped<ProfessionalRepository>();
 
 var app = builder.Build();
 
@@ -51,6 +49,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Login}/{action=Index}/{id?}");
+    pattern: "{controller=Agendamento}/{action=Index}/{id?}");
 
 app.Run();

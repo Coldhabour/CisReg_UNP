@@ -1,6 +1,7 @@
 ﻿@model List<Agendamento>
 
 @{
+<<<<<<< Updated upstream
     ViewData["Title"] = "Agenda Município";
 }
 <style>
@@ -75,3 +76,79 @@
         </div>
     </div>
     </div>
+=======
+    ViewData["Title"] = "Gerenciamento";
+}
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+    * {
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .frameVagas{
+        top: 20%;
+        left: 20%;
+        width:90%;
+        max-width: 1150px;
+        height:85%;
+        border: 2px solid black;
+        border-radius: 10px;
+        max-height:750px;
+        background-color:white;
+        position: absolute;
+        padding:10px;
+        margin: 30px;
+    }
+    .vagas {
+        align-items: center;
+        text-align: initial;
+        border:2px solid black;
+        border-radius:5px;
+        display: inline-block;
+        margin: 10px;
+        padding: 5px;
+        background-color: #57BE93;
+        position: relative;
+        width: 30%;
+        max-width: 150px;
+        height: 25%;
+        max-height: 200px;
+    }
+    .vagas:active{
+            box-shadow: inset 2px 2px black;
+    }
+    .funcao{
+        position:relative;
+        background-color: #57BE93;
+        display:inline-block;
+
+    }
+    label{
+        font-size: clamp(5px, 10px, 1rem);
+    }
+    .nome_funcao{
+        border: 2px solid black;
+        border-radius: 5px;
+        padding: 2px;
+        display: inline-block;
+        font-size:clamp(5px, 10px, 1rem);
+
+    }
+
+</style>
+<div class="frameVagas">
+    <div class="vagas">
+        <label>Ferdinand Franciscald</label>
+        <span class="funcao">
+            <label class="nome_funcao">Medico</label>
+            <label class="nome_funcao">Estequimetrista</label>
+        </span>
+        <label>Paciente: Fulanildo</label>
+        <label>Horario: 18:00</label>
+        <label>Data> 00/05/2024</label>
+    </div>
+    <div class="vagas">
+    </div>
+</div>
+>>>>>>> Stashed changes
