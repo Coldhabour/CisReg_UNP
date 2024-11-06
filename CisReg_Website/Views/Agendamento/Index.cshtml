@@ -1,0 +1,77 @@
+﻿@model List<Agendamento>
+
+@{
+    ViewData["Title"] = "Agenda Município";
+}
+<style>
+    .cursor-pointer {
+        cursor: pointer; /* Muda o cursor para pointer */
+    }
+
+    .card {
+        width: 100%;
+        background-color: #57BE93;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.3s;
+    }
+
+        .card:hover {
+            background-color: #38B2A5; /* Muda a cor ao passar o mouse */
+        }
+
+    .badge {
+        display: inline-block;
+        margin-right: 5px;
+        padding: 5px 10px;
+        border: 1px solid #fff; /* Estilo da badge */
+        border-radius: 5px;
+        color: #fff;
+    }
+</style>
+<div class=" min-h-screen bg-customGrey-light font-poppins">
+<div class="bg-[#57BE93] p-12">
+    <h2 class="text-4xl font-poppins font-bold text-green-400">Agenda Município</h2>
+</div>
+
+<div class="absolute right-10 w-3/4 mt-6">
+    <div>
+        <form>
+            <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only">Search</label>
+            <div class="relative">
+                <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                    <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                    </svg>
+                </div>
+                    <input class="text-[#57BE93] block w-full p-2 ps-10 text-sm border border-gray-300 rounded-lg  focus:outline-none focus:ring" placeholder="Pesquisar" required />
+                <button type="submit" class="text-dark absolute end-1.5 bottom-1.5 bg-[#57BE93] hover:bg-[#57BE93] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-1">Search</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="flex flex-col gap-2 mt-4 text-white">
+        <div class="grid grid-cols-3 gap-4 mt-4  ">
+            @foreach (var agendamento in Model)
+            {
+                    <div class="card cursor-pointer">
+                        <figure>
+                            <img src="~/lib/images/logo-unp.svg" alt="Shoes" />
+                        </figure>
+                        <div class="card-body">
+                            <p class="card-title">
+                                <span class="font-bold text-5xl">@agendamento.Hora</span> data: @agendamento.Data
+                            </p>
+                            <p>Paciente: @agendamento.Paciente</p>
+                            <p>CDSUS: @agendamento.CDSUS</p>
+                            <div class="card-actions mt-1">
+                                @foreach (var especialidade in agendamento.Especialidades)
+                                {
+                                    <div class="badge badge-outline">@especialidade</div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+            }
+        </div>
+    </div>
+    </div>
